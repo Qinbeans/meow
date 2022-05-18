@@ -1,17 +1,17 @@
 <script lang="ts">
-  import logo from './assets/svelte.png'
+  import logo from './assets/meow.png'
   import Sidepanel from './lib/Sidepanel.svelte'
 </script>
 
 <Sidepanel title={"Meow"}/>
 <main>
-  <i class="fa-solid fa-cat catify"></i>
+  <img src={logo} alt="Logo" class="main-logo"/>
 </main>
 
 <style>
-  .catify {
-    font-size: 100px;
-    color: rgba(0, 149, 255, 0.786);
+  .main-logo {
+    width: 15vw;
+    height: 15vw;
   }
 
   :root {
