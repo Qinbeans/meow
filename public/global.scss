@@ -1,0 +1,151 @@
+$common-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+@for $var from 1vw to 11vw {
+    .rs-#{$var} {
+        margin-left: $var !important;
+    }
+}
+@for $var from 1vw to 11vw {
+    .ls-#{$var} {
+        margin-right: $var !important;
+    }
+}
+
+@for $var from 1vh to 11vh {
+    .ts-#{$var} {
+        margin-top: $var !important;
+    }
+}
+
+@for $var from 1vh to 11vh {
+    .bs-#{$var} {
+        margin-bottom: $var !important;
+    }
+}
+
+@for $var from 1vh to 11vh {
+    $num: $var*10;
+    .h-#{$num} {
+        height: $num !important;
+    }
+}
+
+@for $var from 1vw to 11vw {
+    $num: $var*10;
+    .w-#{$num} {
+        width: $num !important;
+    }
+}
+
+//flexible grid
+.grid-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-auto-flow: 5 5;
+}
+
+.main-logo {
+    width: 15vw;
+    height: 15vw;
+}
+
+main {
+    padding: 1em;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.decorator {
+    position: fixed;
+    display: flex;
+    font-family: inherit;
+    font-size: 3vh;
+    color: #006aff;
+    background-color: rgba(122, 224, 255, 0.469);
+    border-radius: 1vw;
+    border: 2px solid rgba(0, 106, 255, 0.545);
+    outline: none;
+    font-variant-numeric: tabular-nums;
+}
+
+.lu-corner {
+    top: 0;
+    left: 0;
+}
+
+button.side-toggle{
+    padding: 1vh 1vw;
+    margin-top: 0.5vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    cursor: pointer;
+}
+h1.side-title{
+    height: 3.5vh;
+    padding: 1vh 1vw;
+    margin: .5vw 0 .5vw 5vw;
+    font-weight: lighter;
+}
+
+button:focus.side-toggle {
+    border: 2px solid #0091ff;
+}
+
+button:active.side-toggle {
+    background-color: rgba(153, 0, 255, 0.459);
+}
+
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 18vw;
+    height: 100%;
+    background-color: rgb(113, 113, 113);
+    display: flex;
+    border-radius: 0 1em 1em 0;
+}
+
+
+.search-icon {
+    padding-right: .15vw;
+    color: rgba(121, 121, 121, 0.596);
+    font-size: 2.25vh;
+    font-weight: bolder;
+}
+
+.search-input {
+    background-color: transparent;
+    border-color: transparent;
+    outline: none;
+    color: rgba(70, 70, 70, 0.596);
+    font-size: 2.25vh;
+    font-weight: bolder;
+    width: 10vw;
+    caret-color: black;
+}
+
+.search-div-outer {
+    width: 100%;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+}
+.search-div-inner {
+    margin-top: 8vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 6vh;
+    border-radius: 1vw;
+    border: 2px solid rgba(0, 106, 255, 0.545);
+    background-color: rgba(122, 224, 255, 0.469);
+    font-variant-numeric: tabular-nums;
+    padding: .15em 1em;
+}

@@ -1,40 +1,23 @@
-<script lang="ts">
-  import logo from './assets/meow.png'
-  import Sidepanel from './lib/Sidepanel.svelte'
-</script>
-
 <Sidepanel title={"Meow"}/>
-<main>
-  <img src={logo} alt="Logo" class="main-logo"/>
-</main>
+{#if is_home}
+  <Logo/>
+{:else}
+  <Results/>
+{/if}
 
-<style>
-  .main-logo {
-    width: 15vw;
-    height: 15vw;
-  }
-
-  :root {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-
-  main {
-    padding: 1em;
-    margin: 0 auto;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-  }
-/* 
-  @media (min-width: 480px) {
-    h1 {
-      max-width: none;
+<script lang="ts">
+  import Logo from "./lib/views/Logo.svelte"
+  import Sidepanel from './lib/Sidepanel.svelte'
+  import Results from "./lib/views/Results.svelte";
+  import { queryResult } from './store'
+  import type { Response } from './types'
+  let is_home: boolean = true
+  queryResult.subscribe((res: Response[]) => {
+    if(res==undefined){
+      is_home = true
+      return
     }
-
-    p {
-      max-width: none;
-    }
-  } */
-</style>
+    console.log(res)
+    is_home = (res.length < 1)
+  })
+</script>

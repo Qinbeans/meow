@@ -1,3 +1,5 @@
-import { writable } from "svelte/store";
+import { Writable, writable } from "svelte/store";
+import type { Response } from "./types";
 
-export const queryResult = writable("");
+export const queryResult:Writable<Response[]> = writable([]);
+export const err:Writable<string> = writable("");
